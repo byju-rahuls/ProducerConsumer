@@ -10,6 +10,8 @@ import org.example.Producer.*;
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.function.Consumer;
+import org.example.Consumer.*;
 
 public class Main {
     int testCases(int op) throws InterruptedException {
@@ -77,6 +79,7 @@ public class Main {
         } else if(op==3) {
             Operations obj = new Operations();
             Producer obj1 = new Producer(obj);
+            Consumer2 obj2 = new Consumer2(obj);
             return 1;
         } else {
             System.out.println("Enter valid option");
