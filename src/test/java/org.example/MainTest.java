@@ -11,5 +11,6 @@ class MainTest {
         Main obj=new Main();
         assertEquals(1,obj.testCases(1));
         assertEquals(1,obj.testCases(2));
+        assertEquals(1,obj.testCases(3));
     }
 }
