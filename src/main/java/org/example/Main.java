@@ -1,5 +1,6 @@
 package org.example;
-
+import org.example.Operations.*;
+import org.example.Producer.*;
 import org.example.Consumer.ConsumerUsingBlockingQueue;
 import org.example.Consumer.ConsumerUsingSyncKeyword;
 import org.example.Producer.ProducerUsingBlockingQueue;
@@ -73,16 +74,24 @@ public class Main {
             t2.start();
             return 1;
 
+        } else if(op==3) {
+            Operations obj = new Operations();
+            Producer obj1 = new Producer(obj);
+            return 1;
         } else {
-            System.out.println("Not Defined Operation");
+            System.out.println("Enter valid option");
             return 0;
         }
+
+
 
     }
 
     public static void main(String args[]) throws InterruptedException {
         System.out.println("\n\n1. Use Blocking Queue to Implement the Producer and Consumer Problem.\n\n2. " +
-                "2. Use Synchronized Block to Implement the producer and Consumer Problem.\n\n");
+                "2. Use Synchronized Block to Implement the producer and Consumer Problem.\n\n"+
+                "3. Use Synchronized Method to Implement the producer and Consumer Problem.\n\n");
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Select Option!");
         int op = sc.nextInt();
